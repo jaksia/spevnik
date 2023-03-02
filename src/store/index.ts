@@ -243,7 +243,7 @@ export default new Vuex.Store<IState>({
   },
   actions: {
     startOfflineMode (ctx) {
-      if (ctx.state.songs.length === 0) {
+      if (ctx.state.songs.length === 0 || ctx.state.songs.length === 1) {
         ctx.commit('enableOffline')
         ctx.commit('save', true)
       }
